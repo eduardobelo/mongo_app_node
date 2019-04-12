@@ -2,7 +2,7 @@
     <div class="alert alert-danger">{{texto}}</div>
 {{else}}
 {{/each}}
-<h1>Nova categoria 
+<h1>Editar categoria 
     <a href="/admin/categorias/" class="float-right">
         <button class="btn btn-success">Listar Categorias</button>
     </a>
@@ -10,18 +10,19 @@
 
 <div class="card mt-4">
     <div class="card-body">
-        <form action="/admin/categorias/cadastrada" method="post">
+        <form action="/admin/categorias/edit" method="post">
             <div class="form-group">
                 <label for="nome">Nome: </label>
-                <input type="text" name="nome" id="nome" placeholder="Nome categoria" class="form-control">
+                <input type="text" name="nome" id="nome" placeholder="Nome categoria" class="form-control" value="{{categorias.nome}}">
             </div>
             <div class="form-group">
                 <label for="slug">Nome: </label>
-                <input type="text" name="slug" id="slug" placeholder="Slug categoria" class="form-control">
+                <input type="text" name="slug" id="slug" placeholder="Slug categoria" class="form-control" value="{{categorias.slug}}">
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-success">Criar categoria</button>
+                <button type="submit" class="btn btn-success">Editar categoria</button>
             </div>
+            <input type="hidden" name="id" value="{{categorias._id}}">
         </form>
     </div>
 </div>
